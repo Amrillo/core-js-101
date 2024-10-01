@@ -20,14 +20,14 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
 
 /**
  * Generates an array of odd numbers of the specified length
  *
- * @param {number} len
+ * @param {number}
  * @return {array}
  *
  * @example
@@ -35,11 +35,18 @@ function findElement(/* arr, value */) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len){
+
+    let arr = [1];
+    let count  = 2;
+    if(arr.length === 1) return arr;
+
+    while(arr.length <= len) {
+      if(count % 2) arr.push(count);
+      count += 1;
+    }
+   return arr;
 }
-
-
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order
