@@ -272,16 +272,12 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  const result = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    for (let j = 0; j <= i; j += 1) {
-      result.push(arr[i]);
-    }
-  }
-  return result;
+  return arr.reduce((total, item, index) => {
+    const repeatedItems = Array(index + 1).fill(item);
+
+    return [...total, ...repeatedItems];
+  }, []);
 }
-
-
 /**
  * Returns the 3 largest numbers from the specified array
  *
